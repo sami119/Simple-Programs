@@ -8,6 +8,9 @@ namespace Person
 {
     class Person
     {
+        // counter
+        private static int count = 0;
+
         // declare some variables
         private string firstName;
         private string lastName;
@@ -17,6 +20,10 @@ namespace Person
         // our constructor
         public Person(string firstName, string lastName, int age, double salary)
         {
+            // counter
+            Person.count++;
+
+            // checkers
             if (firstName.Count() < 3)
             {
                 throw new ArgumentException("First name cannot be less than 3 symbols");
@@ -55,6 +62,10 @@ namespace Person
         }
 
         //public variables
+        public static int Count
+        {
+            get{ return count; }
+        }
 
         /*
         public string FirstName
@@ -127,6 +138,5 @@ namespace Person
                 this.salary += this.salary * bonus / 200;
             }
         }
-
     }
 }

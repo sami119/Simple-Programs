@@ -10,17 +10,22 @@ namespace Person
     {
         public static void Main()
         {
+            //some variables
+            var bonus = double.Parse(Console.ReadLine());
+
+            //List of persons
             var persons = new List<Person>();
+
+            // n is counter for the luft
             var n = int.Parse(Console.ReadLine());
 
+            // our luft
             for (int i = 0; i < n; i++)
             {
                 var cmdArgs = Console.ReadLine().Split();
                 var person = new Person(cmdArgs[0], cmdArgs[1], int.Parse(cmdArgs[2]), double.Parse(cmdArgs[3]));
                 persons.Add(person);
             }
-
-            var bonus = double.Parse(Console.ReadLine());
 
             //persons.ForEach(p => p.IncreaseSalary(bonus));
             foreach(var p in persons)
@@ -33,6 +38,9 @@ namespace Person
             {
                 Console.WriteLine(p.ToString());
             }
+
+            // counter
+            //Console.WriteLine(Person.Count);
 
             Console.ReadKey();
         }
