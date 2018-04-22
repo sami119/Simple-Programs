@@ -55,7 +55,9 @@ namespace Person
         }
 
         //public variables
-        /*public string FirstName
+
+        /*
+        public string FirstName
         {
             get { return this.firstName; }
             set
@@ -105,7 +107,8 @@ namespace Person
                 }
                 this.salary = value;
             }
-        }*/
+        }
+        */
 
         // methods
         public override string ToString()
@@ -115,8 +118,14 @@ namespace Person
 
         public void IncreaseSalary(double bonus)
         {
-            double multiplyer = 1.0 + (bonus / 100);
-            this.salary *= multiplyer;
+            if (this.age > 30)
+            {
+                this.salary += this.salary * bonus / 100;
+            }
+            else
+            {
+                this.salary += this.salary * bonus / 200;
+            }
         }
 
     }
