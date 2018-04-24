@@ -1,7 +1,0 @@
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\obj\Debug\Клас Box.csprojResolveAssemblyReference.cache
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\obj\Debug\Клас Box.csproj.CoreCompileInputs.cache
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\bin\Debug\Клас Box.exe.config
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\bin\Debug\Клас Box.exe
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\bin\Debug\Клас Box.pdb
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\obj\Debug\Клас Box.exe
-D:\За Сами\IT Zone\Програми\Visual Studio Програми\From Lessons\Клас Box\Клас Box\obj\Debug\Клас Box.pdb
