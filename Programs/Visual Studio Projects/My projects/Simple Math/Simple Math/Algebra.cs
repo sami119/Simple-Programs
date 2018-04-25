@@ -13,15 +13,12 @@ namespace Simple_Math
         {
             // a, b , c input
             Console.Write("Enter a: ");
-            try
-            {
-                double a = double.Parse(Console.ReadLine());
-                Console.Write("Enter b: ");
-                double b = double.Parse(Console.ReadLine());
-                Console.Write("Enter c: ");
-                double c = double.Parse(Console.ReadLine());
-            }
-            catch()
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("Enter b: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("Enter c: ");
+            double c = double.Parse(Console.ReadLine());
+
             // D value
             double D = (b * b) - (4 * a * c);
             Console.WriteLine("D = " + D);
