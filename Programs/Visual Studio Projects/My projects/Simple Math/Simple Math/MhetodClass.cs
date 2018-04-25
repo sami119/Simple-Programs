@@ -63,6 +63,5 @@ namespace Simple_Math
                 Console.WriteLine("Your input is too longer. Please enter one character.");
             }
         }
-
     }
 }

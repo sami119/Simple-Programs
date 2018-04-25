@@ -56,11 +56,11 @@ namespace Simple_Math
         public static void Viet()
         {
             // a,b,c initcialization
-            Console.WriteLine("Enter a:");
+            Console.Write("Enter a: ");
             double a = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter b:");
+            Console.Write("Enter b: ");
             double b = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter c:");
+            Console.Write("Enter c: ");
             double c = double.Parse(Console.ReadLine());
 
             // The answer
