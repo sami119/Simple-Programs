@@ -8,20 +8,29 @@ namespace Simple_Math
 {
     static class Algebra
     {
-        // Quadratic Equation Mhetod
+        // Quadratic Equation Method
         public static void QuadraticEquation()
         {
+            // a, b , c input
             Console.Write("Enter a: ");
-            double a = double.Parse(Console.ReadLine());
-            Console.Write("Enter b: ");
-            double b = double.Parse(Console.ReadLine());
-            Console.Write("Enter c: ");
-            double c = double.Parse(Console.ReadLine());
+            try
+            {
+                double a = double.Parse(Console.ReadLine());
+                Console.Write("Enter b: ");
+                double b = double.Parse(Console.ReadLine());
+                Console.Write("Enter c: ");
+                double c = double.Parse(Console.ReadLine());
+            }
+            catch()
+            // D value
             double D = (b * b) - (4 * a * c);
             Console.WriteLine("D = " + D);
+
+            // variables for x1, and x2
             double x1;
             double x2;
 
+            // see what is the value of D and return the answer
             if(D < 0)
             {
                 Console.WriteLine("D < 0");
@@ -49,12 +58,15 @@ namespace Simple_Math
         // Viet Mhetod
         public static void Viet()
         {
+            // a,b,c initcialization
             Console.WriteLine("Enter a:");
             double a = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter b:");
             double b = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter c:");
             double c = double.Parse(Console.ReadLine());
+
+            // The answer
             Console.WriteLine("x1 + x2 = " + -b / a);
             Console.WriteLine("x1 * x2 = " + c / a);
         }

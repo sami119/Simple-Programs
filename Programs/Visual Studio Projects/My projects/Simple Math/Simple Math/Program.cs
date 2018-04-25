@@ -16,78 +16,77 @@ namespace Simple_Math
             // 1st menu loop
             for (; ;)
             {
-                MhetodClass.Menu();
+                MhetodClass.Menu(); // Menu block
                 input = Console.ReadLine();
-                MhetodClass.TryCatch(input);
+                MhetodClass.TryCatch(input); // A method that see if the input is corect or no
 
-                // Our choise
-                if(input.ToUpper() == "A")
+                if(input.ToUpper() == "A")// Open Algebra Menu
                 {
                     // 2nd menu loop
                     for(; ; )
                     {
-                        MhetodClass.AlgebraMenu();
+                        MhetodClass.AlgebraMenu(); // Algebra Menu Block
                         input = Console.ReadLine();
                         MhetodClass.TryCatch(input);
 
                         // Our choise
                         if(input.ToUpper() == "Q")
                         {
-                            Algebra.QuadraticEquation();
+                            Algebra.QuadraticEquation(); // void method
                         }
 
                         if (input.ToUpper() == "V")
                         {
-                            Algebra.Viet();
+                            Algebra.Viet(); // void method
                         }
 
                         if (input.ToUpper() == "U")
                         {
-                            break;
+                            break; // fin of the loop for Algebra Menu
                         }
                     }
                 }
 
-                if(input.ToUpper() == "G")
+                if(input.ToUpper() == "G") // open Geometry Menu
                 {
                     // 2nd menu loop
                     for(; ; )
                     {
-                        MhetodClass.GeometryMenu();
+                        MhetodClass.GeometryMenu(); // Geometry Menu block
                         input = Console.ReadLine();
                         MhetodClass.TryCatch(input);
 
                         // Our choise
                         if (input.ToUpper() == "S")
                         {
-                            Geometry.SinT();
+                            Geometry.SinT(); //void method
                         }
 
                         if (input.ToUpper() == "C")
                         {
-
+                            // coming soon
                         }
 
                         if (input.ToUpper() == "M")
                         {
-
+                            // Comming soon
                         }
 
                         if (input.ToUpper() == "B")
                         {
-
+                            // Coming soon
                         }
 
                         if (input.ToUpper() == "U")
                         {
-                            break;
+                            break; // fin of the second menu loop
                         }
                     }
                 }
 
                 if(input.ToUpper() == "E")
                 {
-                    break;
+                    break; //exit of the program
                 }
             }
             Console.WriteLine("Thanks for using my program.");

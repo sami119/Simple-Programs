@@ -10,7 +10,8 @@ namespace Simple_Math
     {
         public static void SinT()
         {
-            /*Console.Write("Please enter value of a(b,c): ");
+            /*
+             Console.Write("Please enter value of a(b,c): ");
             var a = double.Parse(Console.ReadLine());
             Console.Write("Please enter the angle value: ");
             var angle = double.Parse(Console.ReadLine());

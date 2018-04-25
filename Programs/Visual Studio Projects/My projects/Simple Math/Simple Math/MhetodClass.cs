@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simple_Math
 {
-    static class MhetodClass
+    static class MhetodClass // a class with basic methods
     {
         // Menu
         public static void Menu()
@@ -41,7 +41,7 @@ namespace Simple_Math
         }
 
         // Try catch method
-        public static void TryCatch(string input)
+        public static void TryCatch(string input)//this mhetod see if the input is in corect format in the Menu
         {
             try
             {
