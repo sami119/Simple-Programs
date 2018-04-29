@@ -8,9 +8,11 @@ namespace Exam
 {
     class Part
     {
+        //some private variables
         private string name;
         private double price;
 
+        //public variables with get and set method
         public string Name
         {
             get { return this.name; }
@@ -40,6 +42,7 @@ namespace Exam
             }
         }
 
+        //constructors
         public Part(string name, double price)
         {
             this.name = name;
@@ -52,6 +55,7 @@ namespace Exam
             this.price = 25;
         }
 
+        //ToString method
         public override string ToString()
         {
             return string.Format("-> {0} - {1:F2}", this.name, this.price);
