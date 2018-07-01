@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7CE435B-C46F-49D0-B129-89A4474E7BD9}</ProjectGuid>
+    <ProjectGuid>{12342BC6-6171-4B26-8954-18BFDD4410C0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DynamicList</RootNamespace>
-    <AssemblyName>DynamicList</AssemblyName>
+    <RootNamespace>ArayList1</RootNamespace>
+    <AssemblyName>ArayList1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynamicList.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="ArrayList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
