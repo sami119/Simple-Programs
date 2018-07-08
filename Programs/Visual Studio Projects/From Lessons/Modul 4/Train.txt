@@ -1,0 +1,278 @@
+// Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Train
+{
+    class Program
+    { 
+        private static Deque<Train> trains = new Deque<Train>();
+        private static Stack<Train> history = new Stack<Train>();
+        private static void Add(int number, string name, string type, int cars)
+        {
+            if (type == "F")
+            {
+                //Add freight trains to back
+                trains.AddBack(new Train(number, name, type, cars));
+            }
+            else
+            {
+                trains.AddFront(new Train(number, name, type, cars));
+            }
+        }
+        private static void Travel()
+        {
+            if (trains.Count > 0)
+            {
+
+                Train frontTrain = trains.GetFront();
+                Train backTrain = trains.GetBack();
+                if (backTrain != null && backTrain.Type == "F" && backTrain.Cars > 15)
+                {
+                    history.Push(backTrain);
+                    Console.WriteLine(trains.RemoveBack());
+                }
+                else if (frontTrain != null && frontTrain.Type == "P")
+                {
+                    history.Push(frontTrain);
+                    Console.WriteLine(trains.RemoveFront());
+                }
+                else if (backTrain != null && backTrain.Type == "F")
+                {
+                    history.Push(backTrain);
+                    Console.WriteLine(trains.RemoveBack());
+                }
+            }
+        }
+        private static void Next()
+        {
+            if (trains.Count > 0)
+            {
+
+                Train frontTrain = trains.GetFront();
+                Train backTrain = trains.GetBack();
+                if (backTrain != null && backTrain.Type == "F" && backTrain.Cars > 15)
+                {
+                    Console.WriteLine(backTrain);
+                }
+                else if (frontTrain != null && frontTrain.Type == "P")
+                {
+                    Console.WriteLine(frontTrain);
+                }
+                else if (backTrain != null && backTrain.Type == "F")
+                {
+                    Console.WriteLine(backTrain);
+                }
+            }
+        }
+
+        private static void History()
+        {
+            Stack<Train> temp = new Stack<Train>();
+            int count = history.Count;
+            for (int i = 0; i < count; i++)
+            {
+                temp.Push(history.Peek());
+                Console.WriteLine(history.Pop());
+            }
+            for(int i=0;i<count;i++)
+            {
+                history.Push(temp.Pop());
+            }
+        }
+
+        static void Main(string[] args)
+        {
+
+            string[] command;
+            do
+            {
+                command = System.Console.ReadLine().Split(' ').ToArray();
+                switch (command[0])
+                {
+                    case "Add":
+                        Add(int.Parse(command[1]), command[2], command[3], int.Parse(command[4]));
+                        break;
+                    case "Travel":
+                        Travel();
+                        break;
+                    case "Next":
+                        Next();
+                        break;
+                    case "History":
+                        History();
+                        break;
+                }
+            } while (command[0] != "End");
+        }
+    }
+}
+
+//Train.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Train
+{
+    class Train
+    {
+
+        private int number;
+
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private string type;
+
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        private int cars;
+
+        public int Cars
+        {
+            get { return cars; }
+            set { cars = value; }
+        }
+
+
+        public Train(int number, string name, string type, int cars)
+        {
+            Number = number;
+            Name = name;
+            Type = type;
+            Cars = cars;
+        }
+
+        public override string ToString()
+        {
+            return Number + " " + Name + " " + Type + " " + Cars;
+        }
+    }
+}
+
+
+// Deque.cs
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Train
+{
+    public class Deque<T>
+    {
+        T[] items;
+        public int Capacity;
+        public int Count;
+
+
+        public Deque() : this(16){}
+    
+        public Deque(int capacity)
+        {
+            items = new T[capacity];
+            Capacity = capacity;
+            Count = 0;
+        }
+        public Deque(IEnumerable<T> collection): this(collection.Count())
+        {
+            items = collection.ToArray();
+            Capacity = collection.Count();
+            Count = collection.Count();
+        }
+        
+        public void AddFront(T item)
+        {
+            if (Count == Capacity) Grow();
+            items[Count] = item;
+            Count++;
+        }
+
+        private void Grow()
+        {
+            T[] newItems = new T[2 * Capacity];
+            for(int i=0;i<items.Count();i++)
+            {
+                newItems[i] = items[i];
+            }
+            items = newItems;
+            Capacity *= 2;
+        }
+
+        public void AddBack(T item)
+        {
+            if (Count == Capacity) Grow();
+            for(int i=Count;i>0;i--)
+            {
+                items[i] = items[i - 1];
+            }
+            items[0] = item;
+            Count++;
+        }
+
+        public T RemoveFront()
+        {
+            T[] newItems = new T[Capacity];
+            T toReturn = default(T);
+            for(int i=0;i<Count;i++)
+            {
+                if (i < Count - 1) newItems[i] = items[i];
+                else toReturn = items[i];
+            }
+            items = newItems;
+            Count--;
+            return toReturn;
+        }
+
+        public T RemoveBack()
+        {
+            T[] newItems = new T[Capacity];
+            T toReturn = items[0];
+            for (int i = 0; i < Count; i++)
+            {
+                newItems[i] = items[i + 1];
+            }
+            items = newItems;
+            Count--;
+            return toReturn;
+        }
+
+        public T GetFront()
+        {
+            T toReturn = items[Count-1];
+            return toReturn;
+        }
+
+        public T GetBack()
+        {
+            T toReturn = items[0];
+            return toReturn;
+        }
+    }
+}
