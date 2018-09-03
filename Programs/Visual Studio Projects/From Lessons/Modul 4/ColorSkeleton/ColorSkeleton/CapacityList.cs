@@ -30,7 +30,6 @@ namespace ColorSkeleton
             throw new NotImplementedException();
         }
 
-
         public Color Sum()
         {
             throw new NotImplementedException();

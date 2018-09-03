@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using LabN;
 
 namespace NUnit.Tests1
 {
@@ -13,14 +13,16 @@ namespace NUnit.Tests1
         [Test]
         public void AxeLosesDurabilyAfterAttack()
         {
-            // TODO: Add your test code here
+            // arange
             Axe axe = new Axe(10, 10);
             Dummy dummy = new Dummy(10, 10);
 
+            // act
             axe.Attack(dummy);
+            var result = axe.DurabilityPoints;
 
-
-            Assert.AreEqual(1, axe.DurabilityPoints, "Axe Durability doesnt change after attack");
+            // assert
+            Assert.AreEqual(9, result);
         }
 
         [Test]
@@ -28,12 +30,12 @@ namespace NUnit.Tests1
         {
             Axe axe = new Axe(2, 2);
             Dummy dummy = new Dummy(20, 20);
-
+            //Act
             axe.Attack(dummy);
             axe.Attack(dummy);
 
+            //Assert
             var ex = Assert.Throws<InvalidOperationException>(() => axe.Attack(dummy));
-            Assert.That(ex.Message, Is.EqualTo("Axe is broken."));
         }
     }
 }
