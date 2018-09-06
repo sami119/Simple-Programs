@@ -1,0 +1,17 @@
+﻿using System;
+using System.Linq;
+using NUnit.Framework;
+
+[TestFixture]
+public class AddDecimal
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(MathOperations);
+
+        var methods = sut.GetMethods().Where(n => n.Name == "Add").ToList();
+
+        Assert.IsTrue(methods.Any(n => n.GetParameters().All(s => s.ParameterType == typeof(decimal))));
+    }
+}

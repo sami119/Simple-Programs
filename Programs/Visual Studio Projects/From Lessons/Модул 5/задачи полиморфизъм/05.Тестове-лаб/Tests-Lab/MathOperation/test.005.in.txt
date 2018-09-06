@@ -1,0 +1,19 @@
+﻿using System;
+using System.Linq;
+using NUnit.Framework;
+
+[TestFixture]
+public class AddReturnTypes
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(MathOperations);
+
+        var methods = sut.GetMethods().Where(n => n.Name == "Add").ToList();
+
+        Assert.IsTrue(methods.Any(m => m.ReturnType == typeof(int)));
+        Assert.IsTrue(methods.Any(m => m.ReturnType == typeof(double)));
+        Assert.IsTrue(methods.Any(m => m.ReturnType == typeof(decimal)));
+    }
+}

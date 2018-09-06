@@ -1,0 +1,14 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class RectangleExist
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(Rectangle);
+
+        Assert.IsNotNull(sut);
+    }
+}

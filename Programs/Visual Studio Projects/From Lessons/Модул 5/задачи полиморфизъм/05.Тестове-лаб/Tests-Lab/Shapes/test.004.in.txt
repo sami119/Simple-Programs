@@ -1,0 +1,15 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class RectangleStats
+{
+    [Test]
+    public void TestMethod()
+    {
+        var rect = new Rectangle(2, 5);
+
+        Assert.AreEqual("10", $"{rect.CalculateArea()}");
+        Assert.AreEqual("14", $"{rect.CalculatePerimeter()}");
+    }
+}

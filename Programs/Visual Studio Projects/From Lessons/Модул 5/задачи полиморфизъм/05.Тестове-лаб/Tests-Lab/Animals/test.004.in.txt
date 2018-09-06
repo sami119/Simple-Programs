@@ -1,0 +1,14 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class DogOverride
+{
+    [Test]
+    public void TestMethod()
+    {
+        Animal dog = new Dog("Gosho", "Meat");
+
+        StringAssert.Contains("DJAAF", dog.ExplainMyself());
+    }
+}

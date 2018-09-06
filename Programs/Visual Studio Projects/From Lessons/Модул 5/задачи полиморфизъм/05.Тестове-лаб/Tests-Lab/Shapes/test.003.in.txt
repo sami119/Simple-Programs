@@ -1,0 +1,15 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class CircleStats
+{
+    [Test]
+    public void TestMethod()
+    {
+        var circle = new Circle(2.2);
+
+        Assert.AreEqual("15.21", $"{circle.CalculateArea():N2}");
+        Assert.AreEqual("13.82", $"{circle.CalculatePerimeter():N2}");
+    }
+}

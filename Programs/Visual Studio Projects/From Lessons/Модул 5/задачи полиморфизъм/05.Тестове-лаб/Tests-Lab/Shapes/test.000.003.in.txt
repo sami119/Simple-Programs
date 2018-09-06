@@ -1,0 +1,14 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class CircleExist
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(Circle);
+
+        Assert.IsNotNull(sut);
+    }
+}

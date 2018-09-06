@@ -1,0 +1,14 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class CatExists
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(Cat);
+
+        Assert.IsNotNull(sut);
+    }
+}

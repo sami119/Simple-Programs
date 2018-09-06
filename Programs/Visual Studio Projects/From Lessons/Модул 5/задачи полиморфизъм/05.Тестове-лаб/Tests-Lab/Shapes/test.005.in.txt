@@ -1,0 +1,16 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class DrawMethod
+{
+    [Test]
+    public void TestMethod()
+    {
+        var rect = new Rectangle(2, 5);
+        Assert.AreEqual("Drawing Rectangle", $"{rect.Draw()}");
+
+        var circle = new Circle(2);
+        Assert.AreEqual("Drawing Circle", $"{circle.Draw()}");
+    }
+}

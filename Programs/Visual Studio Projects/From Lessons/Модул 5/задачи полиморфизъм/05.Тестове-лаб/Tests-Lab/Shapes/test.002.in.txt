@@ -1,0 +1,15 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class RectangleBase
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type baseClass = typeof(Shape);
+        Type derived = typeof(Rectangle);
+
+        Assert.IsTrue(derived.BaseType == baseClass);
+    }
+}

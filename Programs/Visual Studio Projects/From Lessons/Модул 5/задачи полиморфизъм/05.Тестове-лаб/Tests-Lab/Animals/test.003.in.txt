@@ -1,0 +1,16 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class VirtualMethod
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(Animal);
+
+        var method = sut.GetMethod("ExplainMyself");
+
+        Assert.IsTrue(method.IsVirtual);
+    }
+}

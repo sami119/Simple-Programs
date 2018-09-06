@@ -1,0 +1,14 @@
+﻿using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class ShapeAbstract
+{
+    [Test]
+    public void TestMethod()
+    {
+        Type sut = typeof(Shape);
+
+        Assert.IsTrue(sut.IsAbstract);
+    }
+}
