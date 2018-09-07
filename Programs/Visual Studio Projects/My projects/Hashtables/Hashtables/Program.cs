@@ -10,7 +10,6 @@ namespace Hashtables
     {
         static void Main(string[] args)
         {
-
         }
     }
 }
