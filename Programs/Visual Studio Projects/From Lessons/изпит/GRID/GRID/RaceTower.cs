@@ -47,8 +47,8 @@ namespace GRID
             }
         }
 
-        ////public void DriverBoxes(List<string> commandArgs)
-        //{
+        public void DriverBoxes(List<string> commandArgs)
+        {
         //    string reasonToBox = commandArgs[0];
         //    string driversName = commandArgs[1];
         //    switch (reasonToBox)
@@ -68,7 +68,7 @@ namespace GRID
         //            break;
         //    }
             
-        //}//ne nosi
+        }//ne nosi
 
         public string CompleteLaps(List<string> commandArgs)
         {
