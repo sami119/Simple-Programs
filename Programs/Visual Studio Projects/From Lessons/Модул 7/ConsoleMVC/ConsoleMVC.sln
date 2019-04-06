@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMVC", "ConsoleMVC\ConsoleMVC.csproj", "{F41CEDFF-0FA0-4AF5-9EEF-6C8072E614AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleMVC", "ConsoleMVC\ConsoleMVC.csproj", "{F41CEDFF-0FA0-4AF5-9EEF-6C8072E614AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceForTransport", "PriceForTransport\PriceForTransport.csproj", "{C418E75C-5828-46D2-9A6A-2DE6837DDA0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriceForTransport", "PriceForTransport\PriceForTransport.csproj", "{C418E75C-5828-46D2-9A6A-2DE6837DDA0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
